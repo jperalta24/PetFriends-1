@@ -1,8 +1,16 @@
 * {
-    color: #4A4A4A
+    color: #4A4A4A;
 }
 
 .section {
+    background-color: burlywood;
+}
+
+main {
+    background-color: burlywood;
+}
+
+.bg-burlywood {
     background-color: burlywood;
 }
 
@@ -24,4 +32,12 @@
 
 .animalpics {
     display: inline-flex;
+}
+
+a:hover {
+    background-color: burlywood;
+}
+
+.bg-is-inherited {
+    background-color: burlywood;
 }
