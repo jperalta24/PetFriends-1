@@ -1,0 +1,30 @@
+body {
+    margin-left: 30%;
+    
+}
+.soul {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    
+}
+.soul input {
+    width: 50%;
+    height: 30px;
+}
+.soul select {
+    width: 50%;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgba(233, 237, 228, 0.699);
+}
+
+.soul textarea {
+    width: 50%;
+}
+#mysubmit {
+    width: 30%;
+    border-radius: 15px;
+    background-color:rgb(54, 54, 224);
+    color: aliceblue;
+    margin-left: 10%;
+}
