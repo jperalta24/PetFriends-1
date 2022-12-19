@@ -1,36 +1,27 @@
 :root {
     --text-color: #4a4a4a;
-    --m-bg-color:  #fafafa
-    ;
+    --m-bg-color: #fafafa;
 }
 
-body{
+body {
+    color: var(--text-color);
+}
+
+
+.service-card {
+    background: linear-gradient(120DEG, #fafafa, #deb887);
+}
+
+
+#container-one {
     background-color: var(--m-bg-color);
 }
-#services{
-   border-right: 3px solid whitesmoke;
+
+#aboutUs {
+    background: linear-gradient(120DEG, #fafafa, #deb887);
 }
 
-#nav-1{
-    background-color:  var(--m-bg-color);
-}
-
-footer{
-    /* border-top: 3px solid whitesmoke; */
-   background-color: var(--m-bg-color);
-}
-
-#services{
-    background-color: var(--m-bg-color);
-    border-radius: 6;
-    border: 3px solid whitesmoke;
-}
-
-#about{
-    background-color: burlywood;
-    
-}
-
-#main-1{
-    
+img {
+    width: 75%;
+    height: auto;
 }
