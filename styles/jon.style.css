@@ -1,0 +1,27 @@
+:root {
+    --text-color: #4a4a4a;
+    --m-bg-color: #fafafa;
+}
+
+body {
+    color: var(--text-color);
+}
+
+
+.service-card {
+    background: linear-gradient(120DEG, #fafafa, #deb887);
+}
+
+
+#container-one {
+    background-color: var(--m-bg-color);
+}
+
+#aboutUs {
+    background: linear-gradient(120DEG, #fafafa, #deb887);
+}
+
+img {
+    width: 75%;
+    height: auto;
+}
