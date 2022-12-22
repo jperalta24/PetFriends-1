@@ -1,3 +1,7 @@
+:root {
+    --buttoncolor: #485fc7;
+}
+
 * {
     color: #4A4A4A;
 }
@@ -40,4 +44,8 @@ a:hover {
 
 .bg-is-inherited {
     background-color: burlywood;
+}
+
+.button {
+    background-color: var(--buttoncolor);
 }
