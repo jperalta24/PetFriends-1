@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,14 @@
     <title>Login</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./styles/userstyle.css">
-    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
-    <script src="https://kit.fontawesome.com/d686ae585f.js" crossorigin="anonymous"></script>
-
+    <script>
+        function pageRedirect() {
+          window.location.href = "./userprofile.html";
+        }      
+    </script> 
 </head>
-<body> 
+
+<body>
     <main>
     <div class="hero is-fullheight">
         <div class="hero-body is-justify-content-center is-align-items-center">
@@ -23,97 +27,20 @@
                 <div class="column">
                     <label for="Name">Password</label>
                     <input class="input is-secondary" type="password" placeholder="Password">
-                    <a href="forget.html" id="forgotpwBtn" class="is-size-7 ">forget password?</a>
+                    <a href="forget.html" id="forgotpwBtn" class="is-size-7 has-text-primary">forget password?</a>
                 </div>
                 <div class="column">
-                    <button id="loginBtn" class="button is-fullwidth" onclick="pageRedirect()" type="button">Login</button>
+                    <button id="loginBtn" class="button is-primary is-fullwidth" onclick="pageRedirect()" type="button">Login</button>
                 </div>
                 <div class="has-text-centered">
-                    <p id="signupBtn" class="is-size-7"> Don't have an account?   
-                        <section>
-                            <div class="container">
-                              <button class="button modal-button" data-target="#modal" aria-haspopup="true">Sign Up </button>
-                              <div id="modal" class="modal">
-                                <div class="modal-background"></div>
-                                <div class="modal-content">
-                                  <div class="box">
-                                    <article class="media">
-                                      <div class="media-content">
-                                        <div class="tabs is-centered">
-                                          <ul>
-                                            <li id="activeIdTwo">
-                                              <a data-select="two" id="two" href="javascript:void(0)">
-                                              </a>
-                                            </li>
-                                          </ul>
-                                        </div>
-                                        <div class="register" id="tabs2">
-                                          <div class="field">
-                                            <label class="label">Name</label>
-                                            <div class="control">
-                                              <input class="input" type="text" placeholder="Text input">
-                                            </div>
-                                          </div>
-                                          <div class="field">
-                                            <label class="label">Username</label>
-                                            <div class="control has-icons-left has-icons-right">
-                                              <input class="input" type="text" placeholder="Username">
-                                              <span class="icon is-small is-left">
-                                              <i class="fas fa-user"></i>
-                                              </span>
-                                              <span class="icon is-small is-right">
-                                              </span>
-                                            </div>
-                                          </div>
-                                          <div class="field">
-                                            <label class="label">Password</label>
-                                            <p class="control has-icons-left">
-                                              <input class="input" type="password" placeholder="Password">
-                                              <span class="icon is-small is-left">
-                                              <i class="fas fa-lock"></i>
-                                              </span>
-                                            </p>
-                                          </div>
-                                          <div class="field">
-                                            <label class="label">Confirm Password</label>
-                                            <p class="control has-icons-left">
-                                              <input class="input" type="password" placeholder="Confirm Password">
-                                              <span class="icon is-small is-left">
-                                              <i class="fas fa-lock"></i>
-                                              </span>
-                                            </p>
-                                          </div>
-                                          <div class="field">
-                                            <label class="label">Email</label>
-                                            <div class="control has-icons-left has-icons-right">
-                                              <input class="input" type="email" placeholder="Email">
-                                              <span class="icon is-small is-left">
-                                              <i class="fas fa-envelope"></i>
-                                              </span>
-                                            </div>
-                                          </div>
-                                          <div class="field">
-                                            <div class="control mt-5">
-                                              <button onclick="pageRefresh()" class="button is-link">Register</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                  </div>
-                                  </article>
-                                </div>
-                                <button class="modal-close is-large" aria-label="close"></button>
-                              </div>
-                            </div>
-                            </div>
-                          </section>
-                        <div id="modal" class="modal"></div>
+                    <p id="signupBtn" class="is-size-7"> Don't have an account? <a href="#" class="has-text-primary">Sign up</a>
                     </p>
                 </div>
             </div>
         </div>
     </div>
     </main>
-    <script src="./scripts/apitest.js"></script>
+    <script src="./scripts/userlogin.js"></script>
 </body>
+
 </html>
