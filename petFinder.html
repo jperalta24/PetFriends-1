@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles/petFinder.css" />
+  <title>Document</title>
+  <body>
+    <h1>Pet Finder</h1>
+  
+    <form name="myform"   >
+      <div class= "soul">
+        <div>
+          <label for="">Select Service</label>
+        </div>
+        <select name="petName" id ="serviceItem">
+            <option value="dog">Dog</option>
+          <option value="cat">Cat</option>
+        </select>
+      </div>
+
+      <div class= "soul">
+        <div>
+          <label for="">Breed</label>
+        </div>
+        <input id="breed"  name="breed"    type="text" title="please enter Breed"  required/>
+        <div id="result" class= "soul">
+        </div>
+      </div>
+
+      <div class= "soul">
+        <div>
+          <label for="">Zip Code</label>
+        </div>
+        <input name="zipCode"    type="text" title="Please enter a Zip Code" pattern="^\s*?\d{5}(?:[-\s]\d{4})?\s*?$" required/>
+      </div>
+      <div class="soul">
+        <button id="mysubmit" type="button" onclick="validateForm()"> submit  </button>
+        <!-- <input id="mysubmit"   type="submit" > -->
+      </div>
+    </form>
+
+    <!-- <div id="result">
+    <h3>My result</h3>
+
+    </div> -->
+  </head>
+</body>
+
+<script src="scripts/petFinder.js">
+
+</script>
+</html>
