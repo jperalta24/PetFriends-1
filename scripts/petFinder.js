@@ -1,53 +1,104 @@
 function validateForm() {
    
-    let petName = document.forms["myform"]["petName"].value;
+    let breed = document.forms["myform"]["breed"].value;
 
     let zipCode = document.forms["myform"]["zipCode"].value;
-    let resultList = document.getElementById("result");
-    let tag = document.createElement("div");
-    tag.href = "";
-    tag.innerHTML = petName + "  " + zipCode;
+    console.log(breed);
+    console.log(zipCode);
+    //add your work here
+}
 
-    tag.className = "container";
-    resultList.appendChild(tag);
 
+let  mydata = JSON.parse(codes);
+let zipcodes = Object.keys(mydata[0]);
+
+let zipCodeId = document.getElementById("zipCode");
+zipCodeId.addEventListener('keyup',showZipCodeSuggestion);
+zipCodeId.addEventListener('change', closeZipCodeSuggestion);
+
+function showZipCodeSuggestion() {
+    document.getElementById("result2").style.display= "block";
+    document.getElementById("result2").innerHTML = ""
+    let text = document.getElementById("zipCode").value.toUpperCase();
+
+    let tempList = [] ;
+    if(text.length > 0) {
+        for ( let i=0; i< zipcodes.length; i++) {
+            if(zipcodes[i].toLocaleLowerCase().startsWith(text.toLocaleLowerCase())) {
+                tempList.push(zipcodes[i]);
+            } 
+        }
     
-console.log("HELLO");
-console.log(petName);
-console.log(zipCode);
+        
+        document.getElementById("result2").style.display= "block";
+        
+        for(let i= 0; i<tempList.length;i++) {
+            if(i==10) break;
+            let result = document.getElementById("result2");
+            let tag = document.createElement("div");
+            tag.id = tempList[i];
+            tag.innerHTML = tempList[i];
+            tag.className = "element";
+            result.appendChild(tag);
+            document.getElementById(tempList[i]).onclick = function(){ 
+                document.getElementById("zipCode").value = tempList[i];
+                console.log(tempList[i]);
+               document.getElementById("result2").style.display= "none";
+            }
+            
+        }
+    }
 }
 
 let breedId = document.getElementById("breed");
-breedId.addEventListener('keyup', showSuggestion);
+ breedId.addEventListener('keyup', showSuggestion);
+breedId.addEventListener('change', closeSuggestion);
+function closeSuggestion() {
+    setTimeout(() => {
+        const box = document.getElementById("result");
+        box.style.display = 'none';
+      }, 1000); 
+}
+function closeZipCodeSuggestion() {
+    setTimeout(() => {
+        const box = document.getElementById("result2");
+        box.style.display = 'none';
+      }, 1000); 
+}
+
 function showSuggestion() {
     document.getElementById("result").style.display= "none";
     document.getElementById("result").innerHTML = ""
     let text = document.getElementById("breed").value.toUpperCase();
 
     let tempList = [] ;
-    for ( let i=0; i< dogBreads.length; i++) {
-        if(dogBreads[i].toLocaleLowerCase().indexOf(text.toLocaleLowerCase()) > -1) {
-            tempList.push(dogBreads[i]);
-        } 
-    }
-
-    console.log(tempList);
-    document.getElementById("result").style.display= "block";
-    for(let i= 0; i<tempList.length;i++) {
-        if(i==10) break;
-        let result = document.getElementById("result");
-        let tag = document.createElement("div");
-        tag.href = "";
-        tag.id = tempList[i];
-        tag.innerHTML = tempList[i];
-        result.appendChild(tag);
-        document.getElementById(tempList[i]).onclick = function(){ 
-            document.getElementById("breed").value = tempList[i];
-
-            document.getElementById("result").style.display= "none";
+    if(text.length > 0) {
+        for ( let i=0; i< dogBreads.length; i++) {
+            if(dogBreads[i].toLocaleLowerCase().startsWith(text.toLocaleLowerCase())) {
+                tempList.push(dogBreads[i]);
+            } 
         }
+    
         
+        document.getElementById("result").style.display= "block";
+        for(let i= 0; i<tempList.length;i++) {
+            if(i==10) break;
+            let result = document.getElementById("result");
+            let tag = document.createElement("div");
+            tag.id = tempList[i];
+            tag.innerHTML = tempList[i];
+            tag.className = "element";
+            result.appendChild(tag);
+            document.getElementById(tempList[i]).onclick = function(){ 
+                console.log("hello");
+                document.getElementById("breed").value = tempList[i];
+                console.log(tempList[i]);
+               document.getElementById("result").style.display= "none";
+            }
+            
+        }
     }
+    
 }
 
 
