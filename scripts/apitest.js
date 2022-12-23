@@ -26,8 +26,8 @@ async function showAnimals(animalType, searchBreed) {
         });
         let dogIdx = (page = 1) * 100;
         apiResult.data.animals.forEach(function(animal) {
-            let results = `  ${++dogIdx}: ${animal.name} url: ${animal.url} breed: ${animal.breeds.primary}`;
-            animalCard.textContent = results;
+            let results = `  ${++dogIdx}: ${animal.name} url: ${animal.url} breed: ${animal.breeds.primary} postcode: ${animal.contact.address.postcode}`;
+            //animalCard.textContent = results;
             displayAnimal(animal)
             //innerHTML = JSON.stringify(results);
             console.log(` == ${++dogIdx}: ${animal.name} id: ${animal.id} url: ${animal.url}`);
@@ -44,7 +44,7 @@ async function showAnimals(animalType, searchBreed) {
 function displayAnimal(animal){
     const div = document.createElement('div')
     div.classList.add('tile', "is-child", "box",);
-    div.textContent = animal.name + " " + animal.id + " "  + animal.url ;
+    div.textContent = animal.name + " " + animal.id + " "  + animal.url + " " + animal.breeds.primary + " " + animal.contact.address.postcode;
     document.querySelector("#animal-container").appendChild(div)
     let newA = document.createElement("a");
     newA.setAttribute("href", animal.url)
@@ -55,31 +55,6 @@ function displayAnimal(animal){
     div.appendChild(animalImg)
 }
 
-// function addAnimal(pets){
-
-//     results.innerHTML = '';
-    
-//     pets.forEach(pet=>{
-//         const div = document.createElement('div')
-//         div.textContent = pet.name;
-//         div.classList.add('tile', "is-child", "box");
-//         div.innerHTML = `
-//             <div class="tile">
-//             <div class="col-6">
-//             `
-//         })
-//         }
-
-
-
-// client.animal.search()
-//     .then(function (response) {
-//         // Do something with `response.data.animals`
-//     })
-//     .catch(function (error) {
-//         // Handle the error
-//     });
-
   client.animalData.types()
   .then(resp => {
     console.log(resp);
@@ -89,6 +64,7 @@ function displayAnimal(animal){
   .then(resp => {
     console.log(resp)
   });
+
 
 
 
