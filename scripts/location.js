@@ -1,11 +1,10 @@
 const client = new petfinder.Client({ apiKey: "tYjMHZupQz0KErvq5ks2tmbgVeeNjmcIcWNxdXWDZB214NzP4I", secret: "DjUBiCURqrNwtRv9GZcuT8CUb6tHWMua1EIlqthR" });
 const dogApi = ('https://dog.ceo/api/breeds/image/random');
-
+let animalContainer = document.querySelector('#animal-container');
 let doggoBtn = document.querySelector('#doggoBtn');
 let randomDog = document.querySelector('#randomDog');
 let searchBtn = document.querySelector('#search-submit');
 // let dogBreeds = document.querySelector('#dogSearch');
-
 
 
 
@@ -46,6 +45,9 @@ async function showAnimals(animalType, searchBreed, postalCode) {
 }
 
 function dogData() {
+
+    clearEl(animalContainer);
+    
     let dogBreeds = document.querySelector('#dogSearch').value;
     let zips = document.querySelector('#zipSearch').value;
     let animalType = 'Dog'
@@ -54,7 +56,7 @@ function dogData() {
 }
 
 
-function dogs(animalType,dogBreeds,zips) {
+    function dogs(animalType,dogBreeds,zips) {
     showAnimals(animalType,dogBreeds,zips);
    
     console.log(dogBreeds);
@@ -67,10 +69,13 @@ function dogs(animalType,dogBreeds,zips) {
 //     let dogBreed = dogBreeds.textContent;
 //     await showAnimals("Dog", dogBreed, "80204");
 // })() 
+let clearEl = function (element) {
+    element.innerHTML = "";
+};
 
 
 function displayAnimal(animal){
-
+    
 
     const div = document.createElement('div')
     div.classList.add('tile', "is-child", "box", "my-2");
@@ -89,8 +94,15 @@ function displayAnimal(animal){
     div.appendChild(animalImg)
     }
 
+    
+ 
 }
 
 
 doggoBtn.addEventListener("click", doggo);
+
+
 searchBtn.addEventListener('click', dogData);
+
+
+
