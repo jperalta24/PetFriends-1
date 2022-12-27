@@ -4,10 +4,10 @@ const dogApi = ('https://dog.ceo/api/breeds/image/random');
 let doggoBtn = document.querySelector('#doggoBtn');
 let randomDog = document.querySelector('#randomDog');
 let searchBtn = document.querySelector('#search-submit');
-let dogBreeds = document.querySelector('#dogSearch').value;
-let dogBreed = dogBreeds
-let zips = document.querySelector('#zipSearch');
-let zipCode = zips.textContent;
+// let dogBreeds = document.querySelector('#dogSearch');
+
+
+
 
 function doggo(){
 fetch(dogApi)
@@ -20,6 +20,8 @@ fetch(dogApi)
     console.log(randomDogs);
 });
 }
+
+
 
 async function showAnimals(animalType, searchBreed, postalCode) {
     let page = 1;
@@ -43,11 +45,19 @@ async function showAnimals(animalType, searchBreed, postalCode) {
 
 }
 
+function dogData() {
+    let dogBreeds = document.querySelector('#dogSearch').value;
+    let zips = document.querySelector('#zipSearch').value;
+    let animalType = 'Dog'
+   
+    dogs(animalType,dogBreeds,zips);
+}
 
 
-function dogs() {
-    showAnimals("Dog", dogBreed, "80204");
-    console.log(dogBreed);
+function dogs(animalType,dogBreeds,zips) {
+    showAnimals(animalType,dogBreeds,zips);
+   
+    console.log(dogBreeds);
 }
 
 
@@ -83,4 +93,4 @@ function displayAnimal(animal){
 
 
 doggoBtn.addEventListener("click", doggo);
-searchBtn.addEventListener('click', dogs);
+searchBtn.addEventListener('click', dogData);
