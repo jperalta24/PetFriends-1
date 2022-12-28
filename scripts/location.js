@@ -50,6 +50,7 @@ function dogData() {
     
     let dogBreeds = document.querySelector('#dogSearch').value;
     let zips = document.querySelector('#zipSearch').value;
+    console.log(dogBreeds + "  : "+ zips);
     let animalType = 'Dog'
    
     dogs(animalType,dogBreeds,zips);

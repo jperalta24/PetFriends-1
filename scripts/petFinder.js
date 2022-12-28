@@ -1,22 +1,23 @@
-
+console.log("I am loading");
 function validateForm() {
    
-    let breed = document.forms["myform"]["breed"].value;
+    let dogSearch = document.forms["myform"]["breed"].value;
 
-    let zipCode = document.forms["myform"]["zipCode"].value;
-    console.log(breed);
-    console.log(zipCode);
+    let zipSearch = document.forms["myform"]["zipCode"].value;
+    console.log(dogSearch);
+    console.log(zipSearch);
     //add your work here
 }
 
-let zipCodeId = document.getElementById("zipCode");
+let zipCodeId = document.getElementById("zipSearch");
+
 zipCodeId.addEventListener('keyup',showZipCodeSuggestion);
 zipCodeId.addEventListener('change', closeZipCodeSuggestion);
 
 function showZipCodeSuggestion() {
     document.getElementById("result2").style.display= "block";
     document.getElementById("result2").innerHTML = ""
-    let text = document.getElementById("zipCode").value.toUpperCase();
+    let text = document.getElementById("zipSearch").value.toUpperCase();
 
     let tempList = [] ;
     if(text.length > 0) {
@@ -30,7 +31,7 @@ function showZipCodeSuggestion() {
             document.getElementById("result2").style.display= "block";
             
             for(let i= 0; i<tempList.length;i++) {
-                if(i==10) break;
+                if(i==6) break;
                 let result = document.getElementById("result2");
                 let tag = document.createElement("div");
                 tag.id = tempList[i];
@@ -38,7 +39,7 @@ function showZipCodeSuggestion() {
                 tag.className = "element";
                 result.appendChild(tag);
                 document.getElementById(tempList[i]).onclick = function(){ 
-                    document.getElementById("zipCode").value = tempList[i];
+                    document.getElementById("zipSearch").value = tempList[i];
                     console.log(tempList[i]);
                    document.getElementById("result2").style.display= "none";
                 }
@@ -49,8 +50,8 @@ function showZipCodeSuggestion() {
     }
 }
 
-let breedId = document.getElementById("breed");
- breedId.addEventListener('keyup', showSuggestion);
+let breedId = document.getElementById("dogSearch");
+breedId.addEventListener('keyup', showSuggestion);
 breedId.addEventListener('change', closeSuggestion);
 function closeSuggestion() {
     setTimeout(() => {
@@ -66,9 +67,10 @@ function closeZipCodeSuggestion() {
 }
 
 function showSuggestion() {
+    
     document.getElementById("result").style.display= "none";
     document.getElementById("result").innerHTML = ""
-    let text = document.getElementById("breed").value.toUpperCase();
+    let text = document.getElementById("dogSearch").value.toUpperCase();
 
     let tempList = [] ;
     if(text.length > 0) {
@@ -81,7 +83,7 @@ function showSuggestion() {
         
         document.getElementById("result").style.display= "block";
         for(let i= 0; i<tempList.length;i++) {
-            if(i==10) break;
+            if(i==6) break;
             let result = document.getElementById("result");
             let tag = document.createElement("div");
             tag.id = tempList[i];
@@ -90,7 +92,7 @@ function showSuggestion() {
             result.appendChild(tag);
             document.getElementById(tempList[i]).onclick = function(){ 
                 console.log("hello");
-                document.getElementById("breed").value = tempList[i];
+                document.getElementById("dogSearch").value = tempList[i];
                 console.log(tempList[i]);
                document.getElementById("result").style.display= "none";
             }
@@ -427,7 +429,7 @@ const dogBreads = [
     "Picardy Spaniel",
     "Plott Hound",
     "Podenco Canario",
-    "Pointer (dog breed)",
+    "Pointer (dog dogSearch)",
     "Polish Greyhound",
     "Polish Hound",
     "Polish Hunting Dog",
