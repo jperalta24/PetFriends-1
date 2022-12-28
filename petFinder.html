@@ -29,18 +29,16 @@
       </div>
       <div class="soul">
         <button id="mysubmit" type="button" onclick="validateForm()"> submit  </button>
-        <!-- <input id="mysubmit"   type="submit" > -->
       </div>
     </form>
-
-    <!-- <div id="result">
-    <h3>My result</h3>
-
-    </div> -->
   </head>
 </body>
-<script  src="scripts/zipcodes.js"></script>
-<script  src="scripts/petFinder.js">
-
+<script>
+    const data = fetch("./scripts/zipcodes2.json")
+    .then(response => {
+      return response.json();
+    });
 </script>
+<script  src="scripts/zipcodes.js"></script>
+<script  src="scripts/petFinder.js"></script>
 </html>
