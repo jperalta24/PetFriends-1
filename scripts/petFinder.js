@@ -1,3 +1,4 @@
+
 function validateForm() {
    
     let breed = document.forms["myform"]["breed"].value;
@@ -7,10 +8,6 @@ function validateForm() {
     console.log(zipCode);
     //add your work here
 }
-
-
-let  mydata = JSON.parse(codes);
-let zipcodes = Object.keys(mydata[0]);
 
 let zipCodeId = document.getElementById("zipCode");
 zipCodeId.addEventListener('keyup',showZipCodeSuggestion);
@@ -23,30 +20,32 @@ function showZipCodeSuggestion() {
 
     let tempList = [] ;
     if(text.length > 0) {
-        for ( let i=0; i< zipcodes.length; i++) {
-            if(zipcodes[i].toLocaleLowerCase().startsWith(text.toLocaleLowerCase())) {
-                tempList.push(zipcodes[i]);
-            } 
-        }
-    
-        
-        document.getElementById("result2").style.display= "block";
-        
-        for(let i= 0; i<tempList.length;i++) {
-            if(i==10) break;
-            let result = document.getElementById("result2");
-            let tag = document.createElement("div");
-            tag.id = tempList[i];
-            tag.innerHTML = tempList[i];
-            tag.className = "element";
-            result.appendChild(tag);
-            document.getElementById(tempList[i]).onclick = function(){ 
-                document.getElementById("zipCode").value = tempList[i];
-                console.log(tempList[i]);
-               document.getElementById("result2").style.display= "none";
+        data.then(data => {
+            for ( let i=0; i< data.length; i++) {
+                let zipcode = "" + data[i].zip_code;
+                if(zipcode.toLocaleLowerCase().startsWith(text.toLocaleLowerCase())) {
+                    tempList.push(zipcode);
+                } 
             }
+            document.getElementById("result2").style.display= "block";
             
-        }
+            for(let i= 0; i<tempList.length;i++) {
+                if(i==10) break;
+                let result = document.getElementById("result2");
+                let tag = document.createElement("div");
+                tag.id = tempList[i];
+                tag.innerHTML = tempList[i];
+                tag.className = "element";
+                result.appendChild(tag);
+                document.getElementById(tempList[i]).onclick = function(){ 
+                    document.getElementById("zipCode").value = tempList[i];
+                    console.log(tempList[i]);
+                   document.getElementById("result2").style.display= "none";
+                }
+                
+            }
+        });
+        
     }
 }
 
