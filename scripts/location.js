@@ -4,6 +4,9 @@ let animalContainer = document.querySelector('#animal-container');
 let doggoBtn = document.querySelector('#doggoBtn');
 let randomDog = document.querySelector('#randomDog');
 let searchBtn = document.querySelector('#search-submit');
+var dogSearchEl = document.querySelector("#dogSearch")
+var histContainer = $(".history");
+let historyButtonEl = document.querySelector("#historyButton")
 // let dogBreeds = document.querySelector('#dogSearch');
 
 
@@ -99,11 +102,94 @@ function displayAnimal(animal){
  
 }
 
+var localAnimals = function () {
+    var searchStorage = JSON.parse(localStorage.getItem("searchStorage"));
+    if (searchStorage == null) {
+      searchStorage = ["Husky", "Corgi", "Artois Hound", "Beagle", "Bernese Mountain Dog", "Dachshund", "Golden Retriever", "Great Dane"];
+      localStorage.setItem("searchStorage", JSON.stringify(searchStorage));
+    }
+    var histContainer = $(".history");
+    histContainer.html("");
+    for (i in searchStorage) {
+      var buttonEl = $("<button1>")
+      .addClass("list-group-item is-link m-2 button is-fullwidth search-history")
+      .attr ("id", "dogSearchList")
+      .attr("type", "button")
+      .text(searchStorage[i]);
+      histContainer.append(buttonEl);
+    }
+  };
+  
+  var updateHistory = function(animal) {
+    var searchStorage = JSON.parse(localStorage.getItem("searchStorage"));
+    searchStorage.unshift(animal);
+    searchStorage.pop();
+    localStorage.setItem("searchStorage", JSON.stringify(searchStorage));
+  
+    var listItems = $(".list-group-item");
+  
+    for (l in listItems) {
+  
+    listItems[l].textContent = searchStorage[l];
+    }
+  }
+  var submitHandler1 = function(event) {
+    histContainer.html(); 
+    clearEl(animalContainer)   
+
+    //dogData()
+  target = $(event.target);
+  targetId = target.attr("id");
+
+  if (targetId === "dogSearchList") {
+    var animal = target.text();
+
+} else if (targetId === "search-submit") {
+    var animal = $("#dogSearch").val();
+};
+
+if (animal) {
+    updateHistory(animal)
+}
+}
+
+var submitHandler = function(event) {
+    histContainer.html(); 
+    clearEl(animalContainer)   
+
+
+    //dogData()
+  target = $(event.target);
+  targetId = target.attr("id");
+
+  if (targetId === "dogSearchList") {
+    var animal = target.text();
+
+} else if (targetId === "search-submit") {
+    var animal = $("#dogSearch").val();
+}
+
+if (animal) {
+    updateHistory(animal)
+}
+}
+
+localAnimals()
+
 
 doggoBtn.addEventListener("click", doggo);
 
 
 searchBtn.addEventListener('click', dogData);
+
+
+$("button1").click(submitHandler1);
+$("button").click(submitHandler);
+
+
+
+
+
 
 
 
