@@ -121,6 +121,7 @@ var localAnimals = function () {
     }
   };
   
+  // get items from localStorage
   var updateHistory = function(animal) {
     var searchStorage = JSON.parse(localStorage.getItem("searchStorage"));
     searchStorage.unshift(animal);
