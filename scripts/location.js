@@ -1,5 +1,9 @@
+
+// pet finder api SDK
 const client = new petfinder.Client({ apiKey: "tYjMHZupQz0KErvq5ks2tmbgVeeNjmcIcWNxdXWDZB214NzP4I", secret: "DjUBiCURqrNwtRv9GZcuT8CUb6tHWMua1EIlqthR" });
+// random dog pic api
 const dogApi = ('https://dog.ceo/api/breeds/image/random');
+// global variables
 let animalContainer = document.querySelector('#animal-container');
 let doggoBtn = document.querySelector('#doggoBtn');
 let randomDog = document.querySelector('#randomDog');
@@ -7,10 +11,9 @@ let searchBtn = document.querySelector('#search-submit');
 var dogSearchEl = document.querySelector("#dogSearch")
 var histContainer = $(".history");
 let historyButtonEl = document.querySelector("#historyButton")
-// let dogBreeds = document.querySelector('#dogSearch');
 
 
-
+//    random dog picture api call
 function doggo(){
 fetch(dogApi)
 .then(function (response) {
@@ -24,10 +27,9 @@ fetch(dogApi)
 }
 
 
-
+// petfinder api call with parameters
 async function showAnimals(animalType, searchBreed, postalCode) {
     let page = 1;
-    //do {
     apiResult = await client.animal.search({
         type: animalType,
         breed: searchBreed,
@@ -47,6 +49,7 @@ async function showAnimals(animalType, searchBreed, postalCode) {
 
 }
 
+// uses user search criteria for petfinder api call
 function dogData() {
 
     clearEl(animalContainer);
@@ -59,34 +62,32 @@ function dogData() {
     dogs(animalType,dogBreeds,zips);
 }
 
-
+// function to pass parameters to show animals function
     function dogs(animalType,dogBreeds,zips) {
     showAnimals(animalType,dogBreeds,zips);
    
-    console.log(dogBreeds);
 }
 
 
-
-// (async function dogs () {
-//     let dogBreeds = document.querySelector('#dog-id')
-//     let dogBreed = dogBreeds.textContent;
-//     await showAnimals("Dog", dogBreed, "80204");
-// })() 
+// clears search results 
 let clearEl = function (element) {
     element.innerHTML = "";
 };
 
-
+// function displays search results
 function displayAnimal(animal){
     
-
+    // assigns div element to div variable
     const div = document.createElement('div')
+    // adds classes to div element
     div.classList.add('tile', "is-child", "box", "my-2");
+    // appends div to animal container id
     div.innerHTML = "<strong>" + animal.name + "</strong>" + "</br> " + animal.description + ".</br> " + "<a href='"+animal.url+"'>Link to their WebPage</a>" + "</br> " + animal.breeds.primary + ".</br> " + animal.contact.address.city + ", " + animal.contact.address.country + " " + animal.contact.address.postcode;
     document.querySelector("#animal-container").appendChild(div)
+    // creates a new anchor element
     let newA = document.createElement("a");
     newA.setAttribute("href", animal.url)
+    // appends new to div
     div.appendChild(newA);
     if (animal.description == null) {
         return div.innerHTML = div.innerHTML = "<strong>" + animal.name + "</strong>" + ".</br> " + "<a href='"+animal.url+"'>Link to their WebPage</a>" + "</br> " + animal.breeds.primary + ".</br> " + animal.contact.address.city + ", " + animal.contact.address.country + " " + animal.contact.address.postcode;
@@ -101,7 +102,7 @@ function displayAnimal(animal){
     
  
 }
-
+// local storage
 var localAnimals = function () {
     var searchStorage = JSON.parse(localStorage.getItem("searchStorage"));
     if (searchStorage == null) {
@@ -120,6 +121,7 @@ var localAnimals = function () {
     }
   };
   
+  // get items from localStorage
   var updateHistory = function(animal) {
     var searchStorage = JSON.parse(localStorage.getItem("searchStorage"));
     searchStorage.unshift(animal);
@@ -137,7 +139,6 @@ var localAnimals = function () {
     histContainer.html(); 
     clearEl(animalContainer)   
 
-    //dogData()
   target = $(event.target);
   targetId = target.attr("id");
 
@@ -158,7 +159,6 @@ var submitHandler = function(event) {
     clearEl(animalContainer)   
 
 
-    //dogData()
   target = $(event.target);
   targetId = target.attr("id");
 
