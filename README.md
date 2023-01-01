@@ -1,7 +1,7 @@
 # PetFriends
-PetFriends pet search website 
+PetFriends Pet Search Website 
 
-## 
+## https://coltonto.github.io/PetFriends/
 
 ## Hello there, thanks for checking out this repository! Below you will find details of this PetFriends project.
 
@@ -43,12 +43,12 @@ PetFriends pet search website
 MIT License
 
 ## Authors 
-Made by Colton Taylor-Ortiz (https://github.com/ColtonTO), Jonathan Peralta (https://github.com/jperalta24), Souleymane Barry (https://github.com/Sbarry0108). 
+Made by [Colton Taylor-Ortiz](https://github.com/ColtonTO), [Jonathan Peralta](https://github.com/jperalta24), [Souleymane Barry](https://github.com/Sbarry0108). 
 
 ### Contributors
 * - Animal Shelter Logo Vectors by [Vecteezy](https://www.vecteezy.com/free-vector/animal-shelter-logo">)  
 * - PetFinder API JS Wrapper (https://github.com/petfinder-com/petfinder-js-sdk)
-- [mloberg] (PetFinder JS Wrapper Creator)
-- [c0dehot] (PetFinder JS Wrapper Creator)
-- [pftjtn]  (PetFinder JS Wrapper Creator)
+> [mloberg](https://github.com/mloberg) 
+> [c0dehot](https://github.com/c0dehot)
+> [pftjtn](https://github.com/pftjtn)
  
