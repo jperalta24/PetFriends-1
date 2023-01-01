@@ -24,7 +24,7 @@ PetFriends Pet Search Website
 * - A link to the dogs profile listing 
 * - A location and area code 
 * - A picture of the dog 
-* F. On the left of the dog searches is your previous search history. (ONLY SAVES DATA, DOES NOT FUNCTION YET! TO BE CONTINUED!) 
+* F. On the left of the dog searches is your previous search history. (ONLY SAVES AND DISPLAYS PRIOR SEARCH, NOT FULLY IMPLEMENTED!) 
 * G. Congrats! Hopefully you find your dream doggo! 
 
 ## Technologies 
