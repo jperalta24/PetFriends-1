@@ -47,8 +47,9 @@ Made by [Colton Taylor-Ortiz](https://github.com/ColtonTO), [Jonathan Peralta](h
 
 ### Contributors
 * - Animal Shelter Logo Vectors by [Vecteezy](https://www.vecteezy.com/free-vector/animal-shelter-logo">)  
-* - PetFinder API JS Wrapper (https://github.com/petfinder-com/petfinder-js-sdk)
-> [mloberg](https://github.com/mloberg) 
-> [c0dehot](https://github.com/c0dehot)
-> [pftjtn](https://github.com/pftjtn)
+* - PetFinder API JS Wrapper (https://github.com/petfinder-com/petfinder-js-sdk) 
+Creators of PetFinder API JS Wrapper below: 
+- [mloberg](https://github.com/mloberg) 
+- [c0dehot](https://github.com/c0dehot)
+- [pftjtn](https://github.com/pftjtn) 
  
