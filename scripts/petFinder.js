@@ -1,3 +1,4 @@
+// used for testing
 function validateForm() {
    
     let dogSearch = document.forms["myform"]["breed"].value;
@@ -7,12 +8,18 @@ function validateForm() {
     console.log(zipSearch);
     //add your work here
 }
+// getting the elements and adding an event listener when user 
+// stated typyng zipcode
 
 let zipcodes = codes;
 
 let zipCodeId = document.getElementById("zipSearch");
 zipCodeId.addEventListener('keyup',showZipCodeSuggestion);
 zipCodeId.addEventListener('change', closeZipCodeSuggestion);
+
+// this function is trigger when a user started typing a zipcode from the input
+// it read all the available zipcodes from the javascript array and show the user suggestion 
+// of six near matching zipcodes
 
 function showZipCodeSuggestion() {
     document.getElementById("result2").style.display= "block";
@@ -65,6 +72,10 @@ function closeZipCodeSuggestion() {
         box.style.display = 'none';
       }, 1000); 
 }
+
+// this function is trigger when a user started typing a breed from the input
+// it read all the available breeds from the javascript array and show the user suggestion 
+// of six near matching breeds
 
 function showSuggestion() {
     document.getElementById("result").style.display= "none";
