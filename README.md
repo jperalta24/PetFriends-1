@@ -1,7 +1,7 @@
 # PetFriends
 PetFriends Pet Search Website 
 
-## https://coltonto.github.io/PetFriends/
+## https://jperalta24.github.io/PetFriends/
 
 ## Hello there, thanks for checking out this repository! Below you will find details of this PetFriends project.
 
